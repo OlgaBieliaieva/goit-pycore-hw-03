@@ -1,14 +1,15 @@
 import random
 
 def get_numbers_ticket(min, max, quantity):
-    if(min < 0 or max > 1000 or quantity > max):
-        return "Error parameter"
-    number_list = range(min, max)
-    selected_list = random.sample(number_list, quantity)    
-    print(selected_list)
-    return selected_list
+    if min < 0 or max > 1000 or quantity > (max - min + 1) or quantity <= 0:
+        return print("Error parameter")
+       
+    numbers = random.sample(range(min, max), quantity)   
+    print(numbers)
+    return numbers
 
 get_numbers_ticket(1, 49, 6)
+get_numbers_ticket(10, 11, 6)
 
 # Завдання 2
 
